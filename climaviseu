@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clima Viseu - Mídia Indoor</title>
+    <style>
+        /* Remove todas as bordas e define fundo preto para evitar brilho excessivo na TV */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            background-color: black;
+            overflow: hidden; /* Evita barras de rolagem */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /* Faz o widget ocupar quase toda a largura da tela */
+        .weather-wrapper {
+            width: 95%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="weather-wrapper">
+        <a class="weatherwidget-io" 
+           href="https://forecast7.com/pt/4066n791/viseu/" 
+           data-label_1="VISEU" 
+           data-label_2="PORTUGAL" 
+           data-icons="Climacons Animated" 
+           data-theme="pure" 
+           data-basecolor="rgba(0,0,0,0)" 
+           data-accent="rgba(255,255,255,0.1)">
+           VISEU PORTUGAL
+        </a>
+    </div>
+
+    <script>
+        // Script oficial do WeatherWidget.io para carregar os dados
+        !function(d,s,id){
+            var js,fjs=d.getElementsByTagName(s)[0];
+            if(!d.getElementById(id)){
+                js=d.createElement(s);
+                js.id=id;
+                js.src='https://weatherwidget.io/js/widget.min.js';
+                fjs.parentNode.insertBefore(js,fjs);
+            }
+        }(document,'script','weatherwidget-io-js');
+    </script>
+
+</body>
+</html>
