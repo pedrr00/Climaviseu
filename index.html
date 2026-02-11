@@ -3,29 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <style>
-        /* Define fundo preto e remove margens */
         body, html { 
             margin: 0; padding: 0; height: 100%; width: 100%; 
             background-color: black; overflow: hidden; 
             display: flex; align-items: center; justify-content: center;
         }
 
-        /* Container que permite o redimensionamento */
+        /* O container agora adapta-se à largura da tela */
         .widget-container {
-            width: 100%;
-            height: 100%;
+            width: 95vw; /* Ocupa 95% da largura da TV */
+            max-width: 1200px; /* Limite máximo para não desfocar */
             display: flex;
-            align-items: center;
             justify-content: center;
         }
 
-        /* Ajusta o tamanho do widget e aumenta a escala (zoom) */
+        /* O iframe agora é responsivo e mantém a proporção */
         iframe { 
             border: none; 
-            width: 800px; /* Largura base do widget */
-            height: 500px; /* Altura base do widget */
-            transform: scale(2.2); /* Aumenta o tamanho em 2.2x para preencher a tela */
-            transform-origin: center;
+            width: 100%; 
+            height: 60vh; /* Ajusta a altura proporcionalmente */
+            display: block;
         }
     </style>
 </head>
