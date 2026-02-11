@@ -5,35 +5,28 @@
     <style>
         body, html { 
             margin: 0; padding: 0; height: 100%; width: 100%; 
-            background-color: black; overflow: hidden; 
-            display: flex; align-items: center; justify-content: center;
+            background-color: black; color: white; overflow: hidden;
+            display: flex; align-items: center; justify-content: space-around;
         }
-
-        /* O segredo está em definir um tamanho fixo para o widget e dar zoom nele */
-        .zoom-container {
-            width: 800px; /* Largura natural do widget */
-            height: 420px; /* Altura natural do widget */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            /* O zoom abaixo ajusta o widget para telas grandes automaticamente */
-            zoom: 1.8; 
-            -moz-transform: scale(1.8);
-            -moz-transform-origin: center;
-        }
-
-        iframe { 
-            border: none; 
-            width: 100%; 
-            height: 100%;
-        }
+        #relogio { font-size: 10vw; font-weight: bold; font-family: Arial; }
+        .clima-box { width: 50%; height: 100%; display: flex; align-items: center; }
+        iframe { border: none; width: 100%; height: 500px; transform: scale(1.2); }
     </style>
 </head>
 <body>
-    <div class="zoom-container">
-        <iframe src="https://www.meteoblue.com/pt/tempo/widget/three/viseu_portugal_2732261?geoloc=fixed&nocurrent=0&noforecast=0&days=4&tempunit=CELSIUS&windunit=KILOMETER_PER_HOUR&layout=dark"  
-                frameborder="0" scrolling="NO" allowtransparency="true">
-        </iframe>
+    <div id="relogio">00:00</div>
+
+    <div class="clima-box">
+        <iframe src="https://www.meteoblue.com/pt/tempo/widget/three/viseu_portugal_2732261?geoloc=fixed&nocurrent=0&noforecast=0&days=4&tempunit=CELSIUS&windunit=KILOMETER_PER_HOUR&layout=dark" frameborder="0" scrolling="NO"></iframe>
     </div>
+
+    <script>
+        function atualizar() {
+            const agora = new Date();
+            document.getElementById('relogio').textContent = agora.toLocaleTimeString('pt-PT', {hour: '2-digit', minute:'2-digit'});
+        }
+        setInterval(atualizar, 1000);
+        atualizar();
+    </script>
 </body>
 </html>
