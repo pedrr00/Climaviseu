@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <style>
+        /* Define fundo preto e remove qualquer margem ou barra de rolagem */
         body, html { 
             margin: 0; padding: 0; height: 100%; width: 100%; 
-            background-color: black; overflow: hidden;
+            background-color: black; overflow: hidden; 
             display: flex; align-items: center; justify-content: center;
         }
-        /* O iframe garante que o conteúdo apareça mesmo se scripts falharem */
+        /* O iframe do Meteoblue é limpo e não exige aceitação de cookies na tela */
         iframe { width: 100%; height: 100vh; border: none; }
     </style>
 </head>
 <body>
-    <iframe src="https://www.tempo.pt/get_widget_insular/43477_7_1_1_1_2_1_1_1" 
-            id="tempo-widget" frameborder="0" scrolling="no"></iframe>
+    <iframe src="https://www.meteoblue.com/pt/tempo/widget/three/viseu_portugal_2732261?geoloc=fixed&nocurrent=0&noforecast=0&days=4&tempunit=CELSIUS&windunit=KILOMETER_PER_HOUR&layout=dark"  
+            frameborder="0" scrolling="NO" allowtransparency="true">
+    </iframe>
 </body>
 </html>
